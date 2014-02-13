@@ -1,0 +1,23 @@
+﻿.box {
+    border: solid 1px black;
+    width: 200px;
+    padding: 3px;
+    background: #deb887;
+}
+.boxDragged {
+    opacity: 0.5;
+}
+.boxDroppableHere {
+    opacity: 0.5;
+    background: greenyellow;
+}
+.column {
+    float: left;
+    padding: 5px;
+}
+#workOrderConfiguration {
+    width: 210px;
+    height: 400px;
+    border: solid 1px black;
+    padding: 5px;
+}
