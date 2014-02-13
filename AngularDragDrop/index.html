@@ -7,6 +7,14 @@
     <script src="Scripts/app/main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="Css/style.css" />
     <title>Work Order Configuration</title>
+    <script type="text/javascript">
+        function showCurrentConfig() {
+            $("#config").empty();
+            $.each($('#workOrderConfiguration').children(), function (index, value) {
+                $("#config").append("<span>" + index + "&nbsp;" + value.id + "<br/>");
+            });
+        }
+    </script>
 </head>
 <body>
     <div ng-app="workOrder">
@@ -20,5 +28,11 @@
             <div ng-repeat="item in workOrderItems" workorderitem id="{{item.hash}}" class="box">{{item.name}}</div>
         </div>
     </div>
+
+    <br style="clear: both"/>
+
+    <button onclick="showCurrentConfig()">Show current config</button>
+    <br/>
+    <div id="config"></div>
 </body>
 </html>
