@@ -58,12 +58,16 @@ app.directive("workorderconfiguration", function () {
                 return false;
             }, false);
         },
-        controller: function() {
-            this.dump = function() {
-                console.dir($("#workOrderConfiguration").children());
+        controller: function ($scope) {
+            $scope.dragStart = function (e, ui) {
+                ui.item[0].classList.add("boxDragged");
+            };
+            $scope.dragEnd = function (e, ui) {
+                ui.item[0].classList.remove("boxDragged");
             };
             $('#workOrderConfiguration').sortable({
-                update: this.dump
+                start: $scope.dragStart,
+                update: $scope.dragEnd
             });
         }
     };
